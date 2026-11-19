@@ -27,13 +27,31 @@ dengan backend PHP + MySQL untuk penyimpanan jawaban, perhitungan BKT, dan dashb
 - Satu trap 3–5 soal. **Menguasai** = P(L) >= 0,95 dan nilai trap >= 80;
   **Cukup** = P(L) >= 0,50 dan nilai >= 60 (nyawa tetap); selain itu **Belum** (nyawa -1).
 
-## Menjalankan secara lokal
+## Clone dan menjalankan di komputer lain (Windows + Laragon)
 
-1. Salin isi `backend/` ke `C:\laragon\www\backend` (atau web root lain).
-2. Buat database `Health_and_Sympathy`, lalu impor `Database/schema.sql` dan
-   `Database/bank_soal/seed_bank_soal.sql`.
-3. Buat akun guru: `php backend/create_guru.php`.
-4. Buka folder ini di Unity 6000.2.13f1, jalankan scene `Login`.
+Folder `Library/`, `Temp/`, `Logs/`, `UserSettings/` dan file `.csproj`/`.sln`
+sengaja tidak ada di repo; Unity membuatnya ulang otomatis saat proyek dibuka.
+
+1. **Clone**
+   ```
+   git clone https://github.com/adityaaryas182/health-and-sympathy.git
+   ```
+2. **Backend**: salin folder `backend/` ke `C:\laragon\www\backend`, sehingga
+   `http://localhost/backend/api/get_soal.php` bisa dibuka. Jalankan Apache dan MySQL di Laragon.
+3. **Database**: buat database `Health_and_Sympathy` (utf8mb4) di HeidiSQL/phpMyAdmin, lalu impor
+   berurutan:
+   1. `Database/schema.sql` (struktur tabel)
+   2. `Database/bank_soal/seed_bank_soal.sql` (6 skill + 72 soal)
+4. **Akun guru** (dari folder `backend`):
+   ```
+   php create_guru.php admin PasswordAnda "Nama Guru"
+   ```
+   Lalu login di `http://localhost/backend/guru/login.php` dan tambahkan data siswa di menu Siswa.
+5. **Unity**: Unity Hub > Add > pilih folder hasil clone, buka dengan Unity **6000.2.13f1**.
+   Pembukaan pertama agak lama karena `Library/` dibuat ulang. Jalankan dari scene `Login`.
+
+Alamat server (default `http://localhost/backend/api/...`) diatur di Inspector komponen
+`LoginSiswa`, `QuizManager` (`Get Soal Url`, `Submit Jawaban Url`), dan `FinishLine`.
 
 Untuk hosting, isi kredensial database di `backend/config/database.local.php`
 (tidak ikut ke git), lihat keterangan di `backend/config/database.php`.
