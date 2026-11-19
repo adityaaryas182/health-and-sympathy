@@ -10,13 +10,11 @@ dengan backend PHP + MySQL untuk penyimpanan jawaban, perhitungan BKT, dan dashb
 |---|---|
 | `Assets/` | Proyek Unity: scene `Level 01`–`Level 03`, script di `Assets/Script/` |
 | `Assets/Script/Quiz/QuizManager.cs` | Alur kuis per trap, layar pembahasan, aturan berhenti |
-| `Assets/Editor/TesQuizOtomatis.cs` | Tes otomatis di Editor (menu Tools > Tes Quiz Otomatis) |
 | `backend/api/` | API untuk game: `get_soal`, `submit_jawaban`, `submit_trap`, `submit_nilai`, `login_siswa` |
 | `backend/config/bkt.php` | Parameter BKT dan semua aturan trap (satu sumber kebenaran) |
-| `backend/guru/` | Dashboard guru: rekap penguasaan, nilai, detail siswa, pretest/posttest |
+| `backend/guru/` | Dashboard guru: rekap penguasaan, nilai, detail siswa, pretest/posttest, kelola soal & siswa |
 | `Database/schema.sql` | Struktur tabel (tanpa data) |
-| `Database/bank_soal/` | Bank soal: `bank_soal.txt` (sumber) -> `generate.php` -> `seed_bank_soal.sql` |
-| `Database/migrasi_*.sql` | Riwayat migrasi database |
+| `Database/bank_soal/seed_bank_soal.sql` | Isi awal 6 skill dan 72 soal |
 
 ## Desain BKT
 

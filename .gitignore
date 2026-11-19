@@ -54,3 +54,19 @@ sysinfo.txt
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# ---------------- Alat bantu pengembangan & file tidak terpakai ----------------
+# Tetap ada di laptop, tetapi tidak di-upload: repo hanya berisi yang dipakai saat game/backend berjalan.
+/Database/simulasi_siswa.php
+/Database/hapus_simulasi.php
+/Database/hitung_ulang_bkt.php
+/Database/migrasi_*.sql
+/Database/bank_soal/bank_soal.txt
+/Database/bank_soal/generate.php
+/Database/bank_soal/review_bank_soal.md
+/Assets/Editor/
+/Assets/Editor.meta
+/Assets/Script/Camera/FixedAspectCamera.cs*
+/Assets/Script/Item/FruitPickup.cs*
+/Assets/Scenes/Level 04.unity*
+/Assets/Scenes/WinPanel.unity*
